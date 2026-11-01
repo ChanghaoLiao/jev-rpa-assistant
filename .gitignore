@@ -13,6 +13,8 @@ config.local*
 *.pfx
 *.p12
 .local-data/
+.ci-data/
+.ci-temp/
 runtime/
 profiles/
 backups/

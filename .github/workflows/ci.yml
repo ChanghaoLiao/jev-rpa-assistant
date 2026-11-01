@@ -30,6 +30,13 @@ jobs:
           cache-dependency-path: |
             requirements.txt
             requirements-windows.txt
+      - name: Set an isolated test temporary directory
+        shell: pwsh
+        run: |
+          $testTemp = Join-Path $env:GITHUB_WORKSPACE '.ci-temp'
+          New-Item -ItemType Directory -Force -Path $testTemp | Out-Null
+          "TEMP=$testTemp" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "TMP=$testTemp" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - name: Check publication boundaries
         run: python tools/check_publication.py
       - name: Install test dependencies

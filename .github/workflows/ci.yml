@@ -2,6 +2,7 @@ name: Offline verification
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ jobs:
     env:
       QT_QPA_PLATFORM: offscreen
       PYTHONUTF8: "1"
-      JEVTOOL_DATA_DIR: ${{ runner.temp }}/jev-offline-data
+      JEVTOOL_DATA_DIR: ${{ github.workspace }}/.ci-data
     steps:
       - name: Check out source
         uses: actions/checkout@v5

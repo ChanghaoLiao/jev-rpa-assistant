@@ -1,0 +1,45 @@
+{
+  "jev": {
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "model": "jev-latest",
+    "api_key": "",
+    "min_confidence": 0.8,
+    "min_probability": 0.8,
+    "min_margin": 0.15,
+    "max_calls": 12
+  },
+  "vision": {
+    "provider": "minimax",
+    "endpoint": "https://api.minimax.cn/v1/chat/completions",
+    "model": "MiniMax-M3",
+    "api_key": "",
+    "buyer_side": "left"
+  },
+  "desktop": {
+    "license_key": "",
+    "shop_id": "my-test-shop",
+    "poll_seconds": 2,
+    "settle_seconds": 1,
+    "locators_reviewed": false,
+    "unread_locator_reviewed": false,
+    "data_upload_authorized": false,
+    "auto_send_enabled": false,
+    "max_sends_per_minute": 3,
+    "locators": {
+      "new_message": "aliworkbench.new_message",
+      "current_user": "aliworkbench.current_user",
+      "chat_window": "aliworkbench.chat_window",
+      "reply_text": "aliworkbench.reply_text",
+      "button_send": "aliworkbench.button_send"
+    }
+  },
+  "knowledge": {
+    "replies_csv": "knowledge/replies.csv",
+    "categories_json": "knowledge/categories.json"
+  },
+  "network": {
+    "connect_timeout": 5,
+    "read_timeout": 40,
+    "attempts": 3
+  }
+}

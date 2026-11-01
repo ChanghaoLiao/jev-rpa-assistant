@@ -1,0 +1,43 @@
+name: Offline verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONUTF8: "1"
+      JEVTOOL_DATA_DIR: ${{ runner.temp }}/jev-offline-data
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-windows.txt
+      - name: Check publication boundaries
+        run: python tools/check_publication.py
+      - name: Install test dependencies
+        run: python -m pip install -r requirements-windows.txt
+      - name: Run offline tests
+        run: python -m unittest discover -s tests -q
+      - name: Run mock demo
+        run: python app.py --demo
+      - name: Check empty configuration
+        run: python app.py --doctor
+      - name: Check Qt initialization
+        run: python app.py --ui-check

@@ -1,0 +1,24 @@
+Jev RPA customer-service prototype 0.3.5
+
+Application source retains the MIT notices in LICENSE, including the upstream
+tmwgsicp/dify-on-qianniu attribution. See reference/SOURCES.md.
+
+PySide6 / Qt for Python may be used under LGPL-3.0 or commercial terms.
+The build uses shared Qt libraries. Review the applicable Qt obligations when
+distributing binaries: https://www.qt.io/licensing/open-source-lgpl-obligations
+License texts are in assets/licenses/.
+
+openpyxl uses the MIT license; the notice is in assets/licenses/openpyxl-MIT.txt.
+Other Python dependencies retain their own package licenses.
+
+Clicknium is an external automation dependency. Its SDK, recorder, runtime and
+commercial redistribution rights must be checked with the provider; the
+application's MIT license does not grant a Clicknium subscription or runtime
+redistribution permission. No Clicknium binaries are included in this source ZIP.
+
+The optional Noto Sans SC font is not bundled in this source publication.
+If separately obtained, retain its SIL Open Font License; OFL.txt is preserved.
+The interface can use the configured system-font fallback.
+
+The small local SVG files are interface icons from the Jev product design.
+They are not photographs or customer screenshots. No media demo is included.

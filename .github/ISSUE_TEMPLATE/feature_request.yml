@@ -1,0 +1,20 @@
+name: 改进建议
+description: 描述具体使用场景和需要减少的操作
+title: "[建议] "
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景和当前困难
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 希望达到的结果
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 涉及的平台与约束

@@ -1,0 +1,32 @@
+name: 问题反馈
+description: 用脱敏文字描述可复现的问题，不上传照片或视频
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: 不要粘贴密钥、客户聊天、Cookie、完整配置或运行数据库。请使用虚构内容复现。
+  - type: input
+    id: version
+    attributes:
+      label: 版本与运行环境
+      placeholder: 0.3.5 / Windows / Python版本 / 浏览器版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 操作步骤
+      description: 从哪个入口开始，依次做了什么
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏文字证据
+      description: 阶段、错误类型和停止原因；不需要图片或视频
